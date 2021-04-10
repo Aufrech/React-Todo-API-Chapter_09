@@ -43,7 +43,7 @@ const useStyles = makeStyles({
   
   }
 
-export default function CardTodo({todo, todos, setTodos}) {
+export default function CardDlu({todo, todos, setTodos}) {
 
     const classes = useStyles();
 
@@ -60,7 +60,7 @@ export default function CardTodo({todo, todos, setTodos}) {
             return item;
         }));
 
-        makePostRequest("http://localhost:3000/api/v1/todo/" + todo._id + "/done" )
+        makePostRequest("http://localhost:3001/api/v1/dlu/" + todo._id + "/consum" )
         .then((data) => console.log(data))
         .catch((err) => console.log(err));
 
@@ -72,7 +72,7 @@ export default function CardTodo({todo, todos, setTodos}) {
         // ... submit to API or something
         setTodos(todos.filter((el) => el.id !== todo.id));
 
-        makeDeleteRequest("http://localhost:3000/api/v1/todo/" + todo._id)
+        makeDeleteRequest("http://localhost:3001/api/v1/todo/" + todo._id)
         .then((data) => console.log(data))
         .catch((err) => console.log(err)); 
         

@@ -31,7 +31,7 @@ function App() {
   }, []);
 
   const fetchTodos = () => {
-    makeGetRequest('http://localhost:3000/api/v1/todos')
+    makeGetRequest('http://localhost:3001/api/v1/todos')
     .then(( data ) => addTodos(data))
     .catch((err) => console.log(err))
   }

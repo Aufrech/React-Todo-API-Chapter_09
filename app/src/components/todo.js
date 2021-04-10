@@ -4,7 +4,7 @@ import axios from 'axios';
 
 async function makePostRequest(url, newTitle, newDesc) {
 
-    let res = await axios.post("http://localhost:3000/api/v1/todo", {
+    let res = await axios.post("http://localhost:3001/api/v1/todo", {
       title: newTitle,
       description: newDesc
     });
@@ -33,7 +33,7 @@ function Todo({todos, addTodos, formData, updateFormData}) {
         ])
 
         // ... submit to API or something
-        makePostRequest('http://localhost:3000/api/v1/todo', formData.title, formData.description)
+        makePostRequest('http://localhost:3001/api/v1/todo', formData.title, formData.description)
         
         .then(( data ) => console.log(data))
         .catch((err) => console.log(err))
